@@ -94,6 +94,8 @@ function Menu() {
 
 function Pizza({ pizzaObj }) {
   // console.log(props);
+
+  if (pizzaObj.soldOut) return null;
   return (
     <li className="pizza">
       <img src={pizzaObj.photoName} alt={pizzaObj.name} />
@@ -114,13 +116,24 @@ function Footer() {
 
   // if (hour >= openHour && hour <= closeHour) alert("We're currently open!");
   // else alert("Sorry we're closed");
+
+  // if (!isOpen)
+  //   return (
+  //     <p>
+  //       We're happy to welcome you between {openHour}:00 and {closeHour}:00
+  //     </p>
+  //   );
   return (
     <footer className="footer">
-      {isOpen && (
+      {isOpen ? (
         <div className="order">
           <p>We're open until {closeHour}:00. Come visit us or order online.</p>
           <button className="btn">Order</button>
         </div>
+      ) : (
+        <p>
+          We're happy to welcome you between {openHour}:00 and {closeHour}:00
+        </p>
       )}
     </footer>
   );
