@@ -73,6 +73,14 @@ function Menu() {
     <main className="menu">
       <h2>Our menu</h2>
 
+      {/* {numPizzas > 0 ? (
+        <ul className="pizzas">
+          {pizzas.map((pizza) => (
+            <Pizza pizzaObj={pizza} key={pizza.name} />
+          ))}
+        </ul>
+      ) : null} */}
+      {/* The same result */}
       {numPizzas > 0 && (
         <ul className="pizzas">
           {pizzas.map((pizza) => (
